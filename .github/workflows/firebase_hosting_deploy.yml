@@ -1,0 +1,37 @@
+name: Build and Deploy Firebase Hosting
+
+on:
+  push:
+    branches:
+      # - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        channel: 'stable'
+        flutter-version: '3.24.4'
+
+    - name: Install jaspr_cli
+      run: dart pub global activate jaspr_cli
+
+    - name: Install dependencies
+      run: flutter pub get
+
+    - name: Build Website
+      run: jaspr build
+
+    - name: Deploy to Firebase Hosting
+      uses: FirebaseExtended/action-hosting-deploy@v0
+      with:
+        repoToken: '${{ secrets.GITHUB_TOKEN }}'
+        firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}'
+        channelId: live
+        projectId: gdgkampala-1570452632700
