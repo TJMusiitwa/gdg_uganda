@@ -61,7 +61,7 @@ class App extends StatelessComponent {
                     path: '/devfest-2024',
                     title: 'Devfest \'24',
                     builder: (context, state) => const Devfest2024()),
-                Route(path: '/*', builder: (context, state) => ErrorPage()),
+                Route(path: '/404', builder: (context, state) => ErrorPage()),
               ])
         ],
         errorBuilder: (context, state) => ErrorPage(),
