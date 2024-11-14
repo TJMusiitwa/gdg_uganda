@@ -8,7 +8,7 @@
     ],
     "redirects": [
       {
-        "destination": "/error.html",
+        "destination": "/*",
         "type": 404
       }
     ]
