@@ -1,7 +1,6 @@
-// ignore: file_names
 import 'package:jaspr/jaspr.dart';
 
-class Error404 extends StatelessComponent {
+class ErrorPage extends StatelessComponent {
   @override
   Iterable<Component> build(BuildContext context) sync* {
     yield div(

@@ -1,8 +1,8 @@
 import 'package:gdg_uganda/components/chat_widget.dart';
 import 'package:gdg_uganda/components/theme_controller.dart';
-import 'package:gdg_uganda/pages/404.dart';
 import 'package:gdg_uganda/pages/chapters.dart';
 import 'package:gdg_uganda/pages/devfest_2024.dart';
+import 'package:gdg_uganda/pages/error.dart';
 import 'package:gdg_uganda/pages/past_events.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_router/jaspr_router.dart';
@@ -61,9 +61,10 @@ class App extends StatelessComponent {
                     path: '/devfest-2024',
                     title: 'Devfest \'24',
                     builder: (context, state) => const Devfest2024()),
+                Route(path: '/*', builder: (context, state) => ErrorPage()),
               ])
         ],
-        errorBuilder: (context, state) => Error404(),
+        errorBuilder: (context, state) => ErrorPage(),
       ),
     ]);
   }
