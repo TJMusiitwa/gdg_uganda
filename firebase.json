@@ -8,6 +8,7 @@
     ],
     "redirects": [
       {
+        "source": "**",
         "destination": "/*",
         "type": 404
       }
